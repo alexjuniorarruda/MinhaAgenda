@@ -19,7 +19,7 @@ module.exports = {
         try {
             const { usuario_id } = req.params;
             const { nome, telefone, email, cidade, cep, rua, numero, bairro } = req.body;            
-            const endereco = rua + numero + bairro;
+            const endereco = `${rua}, ${numero}, ${bairro}`;
             
             const usuario = await Usuario.count({
                 where: {
